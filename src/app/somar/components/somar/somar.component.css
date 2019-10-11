@@ -1,0 +1,17 @@
+.texto{
+    height: 90px;
+    font-size: 70px;
+}
+.texto2{
+    font-size: 25px;
+}
+
+.botao{
+    font-size: 40px;
+}
+.jumbotron{
+    background-color: lightseagreen;
+}
+.container{
+    background-color: lightblue;
+}

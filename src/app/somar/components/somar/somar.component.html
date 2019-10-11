@@ -1,0 +1,46 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-12 jumbotron">
+        <h1>Padaria do Joaquim</h1>
+        <h2>Aqui só não tem quindim!</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-block botao" (click)="calcula(5)" (click)="calculaValorLanche(1)">Lanche R$ 5.00</button>
+            <br>
+            <label class="texto2"> Quantidade de Lanches: </label>
+            <input type="text" class="form-control texto" [value]="pegaValorLanche" readonly>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-block botao" (click)="calcula(4)" (click)="calculaValorBebida(1)">Bebida R$ 4.00</button>
+            <br>
+            <label class="texto2"> Quantidade de Bebidas: </label>
+            <input type="text" class="form-control texto" [value]="pegaValorBebida" readonly>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-block botao" (click)="calcula(3)" (click)="calculaValorDoce(1)">Doce R$ 3.00</button>
+            <br>
+            <label class="texto2"> Quantidade de Doces: </label>
+            <input type="text" class="form-control texto" [value]="pegaValorDoce" readonly>
+        </div>
+    </div>
+   
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <br>
+            <label class="texto"> Total a pagar: </label>
+            <label class="texto"> R$ {{pegaValor}}</label>
+        </div>
+    </div>
+    <div class="col-md-6">
+            <div class="form-group">
+                <br>
+                <button class="btn btn-danger btn-block botao"(click)="reseta()">Cancelar Compra</button>
+            </div>
+    </div>
+</div>
+</div>
