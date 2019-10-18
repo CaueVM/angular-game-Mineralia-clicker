@@ -132,7 +132,17 @@ input{
         height: 70px;
         margin-top: 10px;
         font-size: 40px;
+        font-weight:bold;
+        background-color: white;
+        color:black;
+        border:none;
+        font-size: 22px;
     }
+    .vender:focus{
+        outline: thin dotted;
+       outline: 0px auto -webkit-focus-ring-color;
+       outline-offset: 0px;
+       }
     .din{
         color:white;
         font-size: 14px;
@@ -142,16 +152,30 @@ input{
         text-align: center;
     }
     .cu{
-        font-weight:bold;
+    font-weight:bold;
     color:black;
     border:none;
     font-size: 22px;
     margin-top: 5px;
-    margin-left: px;
     }
     .cu:focus{
     outline: thin dotted;
     outline: 0px auto -webkit-focus-ring-color;
     outline-offset: 0px;
 
+    }
+    .iniciar{
+    font-weight:bold;
+    color:black;
+    border:none;
+    font-size: 22px;
+    margin-top: 5px;
+    background-color: white;
+    height: 50px;
+    width: 50%;
+    }
+    .iniciar :focus{
+     outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
     }

@@ -3,78 +3,106 @@
 <div class="container">
     <div class="menu">
         <h1>Seja bem vindo ao Minerália</h1>
+        <button class="btn iniciar" (click)="resetAll()" style="color:black;">INICIAR</button>
     </div>
     <div class="btnMinerar">
         <h2>clique aqui em baixo para minerar</h2>
-        <span><img src="assets/madeira.png" class="minerarFoto" (click)="calculaMinerar(1)"></span>
+        <span><img id="madeira" src="assets/madeira.png" class="minerarFoto" (click)="calculaMinerar()"></span>
     </div> 
     <div class="quantiaFerro">
         <h2> Quantia de ferro</h2><img src="assets/ferrin.png" class="ferro">
-        <input readonly value="ferroMinerado" [value]="pegaQuantiaMinerio">
-        <button class="vender" (click)="vender()">Vender</button>
+        <input readonly [value]="pegaQuantiaMinerio">
+        <button class="vender" (click)="converteFerro()">VENDER</button>
     </div> 
     <div class="quantiaOuro">
         <h2> Quantia de Ouro</h2><img src="assets/ourin.png" class="ferro">
-        <input readonly [value]="pegaQuantiaOuro">
-        <button class="vender" (click)="reseta()">Resetar Tudo</button>
+        <input readonly [value]="pegaValorConvertidoOuro">
+        <br>
+        <br>
+        <p style="font-size: 30px; color:white; border-style: dotted; 
+        border-color: blue; background-color: rgba(73, 103, 131, 0.75)" > 1 de <img src="assets/ferrin.png" class="ferro"> = 0.25 de <img src="assets/ourin.png" class="ferro"></p>
     </div>    
     <div class="loja">
         <h1>Compre aqui suas Novas Picaretas</h1>
     </div>
     <div class="item1">
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Pica De Pedra</div>
+            <div class="card-header">Picareta De Pedra</div>
                 <div class="card-body">
                     <h5 class="card-title"><img src="assets/pedra.png" style="height: 100px;"></h5>
-                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 100 <button class="cu">Comprar</button></p>                     
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 100 
+                    <button class="cu" (click)="comprarPicareta1(100, 10, 1)">Comprar</button></p>                     
                 </div>
         </div>
     </div>
     <div class="item2">
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Pica De Ferro</div>
+            <div class="card-header">Picareta De Ferro</div>
                 <div class="card-body">
                     <h5 class="card-title"><img src="assets/ferroP.png" style="height: 100px;"></h5>
-                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 1000 <button class="cu">Comprar</button></p>                    
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 1000 
+                        <button (click)="comprarPicareta1(1000, 20)"class="cu">Comprar</button></p>                    
                 </div>
             </div>
     </div>
     <div class="item3">
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Pica De Ouro</div>
+            <div class="card-header">Picareta De Ouro</div>
                 <div class="card-body">
                     <h5 class="card-title"><img src="assets/ouro.png" style="height: 100px;"></h5>
-                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 10000 <button class="cu">Comprar</button></p>                  
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 10000 
+                    <button class="cu" (click)="comprarPicareta1(10000, 50)">Comprar</button></p>                  
                 </div>
             </div>
     </div>
     <div class="item4">
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Pica De Dima</div>
+            <div class="card-header">Picareta De Dima</div>
                 <div class="card-body">
                     <h5 class="card-title"><img src="assets/dima.png" style="height: 100px;"></h5>
-                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 100000 <button class="cu">Comprar</button></p>                   
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 100000 
+                    <button class="cu" (click)="comprarPicareta1(100000, 100)">Comprar</button></p>                   
                 </div>
             </div>
     </div>
     <div class="item5">
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Pica De Esme</div>
+            <div class="card-header">Picareta De Esme</div>
                 <div class="card-body">
                     <h5 class="card-title"><img src="assets/esme.png" style="height: 100px;"></h5>
-                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 1000000 <button class="cu">Comprar</button></p>                  
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 1000000 
+                    <button class="cu" (click)="comprarPicareta1(1000000, 150)">Comprar</button></p>                  
                 </div>
             </div>
     </div>
     <div class="item6">
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Pica De Prestigio</div>
+            <div class="card-header">Picareta De Prestigio</div>
                 <div class="card-body">
                     <h5 class="card-title"><img src="assets/prestigio.png" style="height: 100px;"></h5>
-                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 10000000 <button class="cu">Comprar</button></p>                     
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 10000000 
+                    <button class="cu" (click)="comprarPicareta1(10000000, 200)">Comprar</button></p>                     
                 </div>
             </div>
     </div>
 
 </div>
 </body> 
+<script>
+function trocaimagem(elImg){
+
+var elImg = document.getElementById('minhaImagem'); 
+
+//pegar o atual src 
+var src = elImg.substr( elImg.lastIndexOf('/')+1 , elImg.length); 
+
+if( src == 'nuvem.gif' ) 
+{ 
+   elImg.src = 'nuvemChuva.gif' 
+} 
+else 
+{ 
+   elImg.src = 'nuvem.gif'; 
+} 
+}
+</script>
