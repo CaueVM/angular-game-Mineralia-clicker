@@ -9,52 +9,33 @@ import { SomarService } from '../../services';
 export class SomarComponent implements OnInit {
 
   constructor(private somar: SomarService) { }
-  private valor: number;
-  private valorBebida: number;
-  private valorLanche: number;
-  private valorDoce: number;
-
+  private quantiaMinerio: number;
+  private quantiaOuro: number;
+  private valorFerro: number;
+  private ferroMinerado: number;
 
   ngOnInit() {
-    this.valor        = 0;
-    this.valorBebida  = 0;
-    this.valorLanche  = 0;
-    this.valorDoce    = 0;
-  }
+    this.quantiaMinerio = 0;
+    this.quantiaOuro  = 0;
 
-  calcula(valorRecebido: number){
-    this.valor = this.somar.somar(this.valor,valorRecebido);
-  }
-
-  calculaValorLanche(valorRecebidoLanche: number){
-    this.valorLanche = this.somar.somar(this.valorLanche,valorRecebidoLanche);
   }
   
-  calculaValorBebida(valorRecebidoBebida: number){
-    this.valorBebida = this.somar.somar(this.valorBebida,valorRecebidoBebida);
+
+  calculaMinerar(valorRecebido: number){
+    this.quantiaMinerio = this.somar.somar(this.quantiaMinerio,valorRecebido);
   }
 
-  calculaValorDoce(valorRecebidoDoce: number){
-    this.valorDoce = this.somar.somar(this.valorDoce,valorRecebidoDoce);
-  }
   reseta(){
-    this.valor = 0;
-    this.valorLanche = 0;
-    this.valorBebida = 0;
-    this.valorDoce = 0;
+    this.quantiaMinerio = 0;
+    this.quantiaOuro = 0;
   }
 
-  get pegaValor(){
-    return this.valor;
+  get pegaQuantiaMinerio(){
+    return this.quantiaMinerio;
   }
-  get pegaValorLanche(){
-    return this.valorLanche;
-  }
-  get pegaValorBebida(){
-    return this.valorBebida;
-  }
-  get pegaValorDoce(){
-    return this.valorDoce;
+  get pegaQuantiaOuro(){
+    return this.quantiaOuro;
   }
 
 }
+

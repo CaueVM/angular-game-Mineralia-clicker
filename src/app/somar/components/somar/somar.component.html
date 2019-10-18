@@ -1,46 +1,80 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
 <div class="container">
-<div class="row">
-    <div class="col-md-12 jumbotron">
-        <h1>Padaria do Joaquim</h1>
-        <h2>Aqui só não tem quindim!</h2>
+    <div class="menu">
+        <h1>Seja bem vindo ao Minerália</h1>
     </div>
-</div>
-<div class="row">
-    <div class="form-group">
-        <div class="col-md-4">
-            <button class="btn btn-primary btn-block botao" (click)="calcula(5)" (click)="calculaValorLanche(1)">Lanche R$ 5.00</button>
-            <br>
-            <label class="texto2"> Quantidade de Lanches: </label>
-            <input type="text" class="form-control texto" [value]="pegaValorLanche" readonly>
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-primary btn-block botao" (click)="calcula(4)" (click)="calculaValorBebida(1)">Bebida R$ 4.00</button>
-            <br>
-            <label class="texto2"> Quantidade de Bebidas: </label>
-            <input type="text" class="form-control texto" [value]="pegaValorBebida" readonly>
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn-primary btn-block botao" (click)="calcula(3)" (click)="calculaValorDoce(1)">Doce R$ 3.00</button>
-            <br>
-            <label class="texto2"> Quantidade de Doces: </label>
-            <input type="text" class="form-control texto" [value]="pegaValorDoce" readonly>
-        </div>
+    <div class="btnMinerar">
+        <h2>clique aqui em baixo para minerar</h2>
+        <span><img src="assets/madeira.png" class="minerarFoto" (click)="calculaMinerar(1)"></span>
+    </div> 
+    <div class="quantiaFerro">
+        <h2> Quantia de ferro</h2><img src="assets/ferrin.png" class="ferro">
+        <input readonly value="ferroMinerado" [value]="pegaQuantiaMinerio">
+        <button class="vender" (click)="vender()">Vender</button>
+    </div> 
+    <div class="quantiaOuro">
+        <h2> Quantia de Ouro</h2><img src="assets/ourin.png" class="ferro">
+        <input readonly [value]="pegaQuantiaOuro">
+        <button class="vender" (click)="reseta()">Resetar Tudo</button>
+    </div>    
+    <div class="loja">
+        <h1>Compre aqui suas Novas Picaretas</h1>
     </div>
-   
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <div class="form-group">
-            <br>
-            <label class="texto"> Total a pagar: </label>
-            <label class="texto"> R$ {{pegaValor}}</label>
+    <div class="item1">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pica De Pedra</div>
+                <div class="card-body">
+                    <h5 class="card-title"><img src="assets/pedra.png" style="height: 100px;"></h5>
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 100 <button class="cu">Comprar</button></p>                     
+                </div>
         </div>
     </div>
-    <div class="col-md-6">
-            <div class="form-group">
-                <br>
-                <button class="btn btn-danger btn-block botao"(click)="reseta()">Cancelar Compra</button>
+    <div class="item2">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pica De Ferro</div>
+                <div class="card-body">
+                    <h5 class="card-title"><img src="assets/ferroP.png" style="height: 100px;"></h5>
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 1000 <button class="cu">Comprar</button></p>                    
+                </div>
             </div>
     </div>
+    <div class="item3">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pica De Ouro</div>
+                <div class="card-body">
+                    <h5 class="card-title"><img src="assets/ouro.png" style="height: 100px;"></h5>
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 10000 <button class="cu">Comprar</button></p>                  
+                </div>
+            </div>
+    </div>
+    <div class="item4">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pica De Dima</div>
+                <div class="card-body">
+                    <h5 class="card-title"><img src="assets/dima.png" style="height: 100px;"></h5>
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 100000 <button class="cu">Comprar</button></p>                   
+                </div>
+            </div>
+    </div>
+    <div class="item5">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pica De Esme</div>
+                <div class="card-body">
+                    <h5 class="card-title"><img src="assets/esme.png" style="height: 100px;"></h5>
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 1000000 <button class="cu">Comprar</button></p>                  
+                </div>
+            </div>
+    </div>
+    <div class="item6">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-header">Pica De Prestigio</div>
+                <div class="card-body">
+                    <h5 class="card-title"><img src="assets/prestigio.png" style="height: 100px;"></h5>
+                    <p class="card-text din "><img src="assets/ourin.png" class="ferro"> 10000000 <button class="cu">Comprar</button></p>                     
+                </div>
+            </div>
+    </div>
+
 </div>
-</div>
+</body> 
